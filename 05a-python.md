@@ -12,7 +12,9 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
+Question Status: In progress
 >> Python Lists are different 
+
 
 >> Python Lists & Tuples: Similarities
 
@@ -28,6 +30,11 @@ How are Python lists and tuples similar and different? Which will work as keys i
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
 >> REPLACE THIS TEXT WITH YOUR RESPONSE
+Question Status: In progress
+>>
+>>
+>>
+
 
 ---
 
