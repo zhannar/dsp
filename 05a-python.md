@@ -12,7 +12,14 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Python Lists are different 
+
+>> Python Lists & Tuples: Similarities
+
+>> Python Lists & Tuples: Differences
+- Mutability: Lists are mutable; Tuples are not. 
+- Heteogenity/Homoegenity of objects: Generally lists work better for objects of the same type (although it's not forced by), whereas tuples are more for heterogenous objects.
+- Structured vs. Unstructured - Tuples have structure, whereas lists of have order. As a consequence of tuples being designed for different types of objects, the position of each type of object creates a specific structure.
 
 ---
 
