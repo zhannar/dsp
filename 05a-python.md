@@ -13,15 +13,28 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
 Question Status: In progress
+Python lists and tuples are similar in that they both hold collections of values. By examining some "prototypical" examples of each, we can best understand the differences between these two data structures, what each is ideally suited for and therefor why one would use one over another. Note, in certain cases one is "softly" urged to use one data structure over another because one's only been acquanted with examples that use that particular datatype. In other cases, one is "hard"-forced to use a particular data structure because of the constraints of Python. 
+
+The List -- The foundamental and most easy to understand data structure which is a collection of objects is a list.
+A list is most closely defined as a "sequence of values."
+
+A list can be defined as:
+
+
+(both 'softly'-implied through it's usage hard-implied through the constraints of Python)
 >> Python Lists are different 
 
 
 >> Python Lists & Tuples: Similarities
 
->> Python Lists & Tuples: Differences
-- Mutability: Lists are mutable; Tuples are not. 
+>> Python Lists & Tuples: Differences -- The differences betwen lists and tuples are the following:
 - Heteogenity/Homoegenity of objects: Generally lists work better for objects of the same type (although it's not forced by), whereas tuples are more for heterogenous objects.
 - Structured vs. Unstructured - Tuples have structure, whereas lists of have order. As a consequence of tuples being designed for different types of objects, the position of each type of object creates a specific structure.
+
+- Mutability: Lists are mutable; Tuples are not. while the heterogenity/homogenity is suggested,, the structured/unstructuredness is baed on an individuals pov, 
+
+References:
+http://stackoverflow.com/questions/626759/whats-the-difference-between-list-and-tuples#
 
 ---
 
