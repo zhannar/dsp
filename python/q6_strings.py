@@ -103,8 +103,21 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
-    raise NotImplementedError
+    
+    """First 2 char of "b" --> All but first 2 char of "a" -> space -> First 2 char of "a" --> All but first 2 char of "b"
+    
+    For reasons of efficiency, join is preferred for concatenating more than 2 strings at a time. See references below.
+    http://stackoverflow.com/questions/10043636/any-reason-not-to-use-to-concatenate-two-strings
+    http://stackoverflow.com/questions/2711579/concatenate-strings-in-python-2-4
+    """
 
+    # Simple but inefficient version when scaled:
+    # mix_up_word = b[:2] + a[2:] + " "+ a[:2] + b[2:]
+    
+    mix_up_word = "".join((b[:2], a[2:]," ",a[:2],b[2:]))
+    
+    return mix_up_word
+    print mix_up_word
 
 def verbing(s):
     """
