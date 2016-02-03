@@ -72,8 +72,21 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
 
+    if type(s) == str:
+        #Isolates the first letter of the string.
+        first_letter = s[:1]
+        #Isolates everythign but first letter of the string.
+        rest_of_word = s[1:]
+        
+        # Replaces all letters in rest of the string which match the first letter with an asteristk.
+        # Adds the first letter back to complete the string.
+        print first_letter + rest_of_word.replace(first_letter, "*")
+    else:
+        print "Please enter the string as an input."
+
+    """References:
+    http://www.tutorialspoint.com/python/string_replace.htm"""
 
 def mix_up(a, b):
     """
