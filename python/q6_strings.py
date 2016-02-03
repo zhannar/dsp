@@ -18,8 +18,15 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    raise NotImplementedError
-
+    
+    if type(count) == int:
+        if count < 10:
+            print "Number of donuts: %s" % (count)
+        else:
+            print "Number of donuts: many" 
+    else:
+        print "Please enter the number of donuts as an integer value."
+    
 
 def both_ends(s):
     """
