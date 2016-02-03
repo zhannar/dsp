@@ -43,6 +43,32 @@ Question Status: In progress
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
 >> REPLACE THIS TEXT WITH YOUR RESPONSE
+Question Status: In progress
+
+A 'lambda' in python can be thought simply as a 1-time or disposable function. It is a way of defining a particular function-ality, but without going through the full process of actually defining a function. Because no function is ever defined and given a name, it can't be used outside of the given context or scope from which it is defined. Because a name is never given to the function/functionality, it is also called setting up an 'anonymous function."
+
+Example #1: Here's an example where you have a list of ages. If I want to only see those ages which are greater than 25, I can merely use a lambda function with filter to accomplish that quickly...
+
+>>> ages_list = [4,5,63,6,53,23,41]
+>>> filter(lambda x: x>=15, ages_list)
+[63, 53, 23, 41]
+
+Example #2: Let's say instead had a dictionary of ages, where people's names are keys and their value pairs are the ages. If I wanted to sort these people by their ages, I could use a lambda in the "key" aregument of sorted:
+
+>>> ages_dict = {
+	'carl' : 4, 
+	'danny': 5,
+	'matt': 63,
+	'roxanne':6,
+	'bjork': 53,
+	'madonna':23,
+	'shepard':41}
+
+>>> sorted(ages_dict.iteritems(), key = lambda (k,v):(v,k))
+[('carl', 4), ('danny', 5), ('roxanne', 6), ('madonna', 23), ('shepard', 41), ('bjork', 53), ('matt', 63)]
+
+References:
+http://www.saltycrane.com/blog/2007/09/how-to-sort-python-dictionary-by-keys/
 
 ---
 
