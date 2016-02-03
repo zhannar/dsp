@@ -187,4 +187,23 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+    
+    """ Note: I could import math and use the cieling function, but choosing to do it this way to avoid importing...
+    References: http://stackoverflow.com/questions/2356501/how-do-you-round-up-a-number-in-python
+    """
+
+    def word_splitter(str):
+        length = len(str)
+        # Gives you the midpoint if it's even, or the midpoint rounded up if it's odd.
+        special_midpoint = int(length / 2) + (length % 2 > 0)
+        # front = str[:special_midpoint]
+        #back = str[special_midpoint:]
+        string_split = {"front" : str[:special_midpoint] , "back" : str[special_midpoint:]}
+        return string_split
+
+    # Change a & b from strings into dictionaries composed of front and back keys:
+    a = word_splitter(a)
+    b = word_splitter(b)
+
+    # Printing as defined by the assignment:
+    print a['front'] + b['front'] + a['back'] + b['back']
