@@ -140,7 +140,7 @@ def verbing(s):
         print s + "ly"
     else:
         print s + "ing"
-        
+
 def not_bad(s):
     """
     Given a string, find the first appearance of the substring 'not'
@@ -158,8 +158,18 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
+    not_location = s.find("not")  
+    bad_location = s.find("bad")
 
+    """ The whole 'not'...'bad' substring should start at the the 
+    same first instance of "not" and end 2 charachters after where "bad" starts...
+    but that needs to be bumped up to 3 b/c python indexes off of 0..."""
+
+    if not_location < bad_location:
+        # Everything before the "not" -> good -> everything after the bad
+        print s[:not_location] + "good" + s[bad_location+3:]
+    else:
+        print s
 
 def front_back(a, b):
     """
