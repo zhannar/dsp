@@ -43,7 +43,6 @@ Question Status: In progress
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
 >> REPLACE THIS TEXT WITH YOUR RESPONSE
-Question Status: In progress
 
 A 'lambda' in python can be thought simply as a 1-time or disposable function. It is a way of defining a particular function-ality, but without going through the full process of actually defining a function. Because no function is ever defined and given a name, it can't be used outside of the given context or scope from which it is defined. Because a name is never given to the function/functionality, it is also called setting up an 'anonymous function."
 
@@ -91,7 +90,8 @@ date_start = '01-02-2013'
 date_stop = '07-28-2015'
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
+Part a: The number of days between 01-02-2013 and 07-28-2015 is 937 days.
+
 
 b.  
 ```
@@ -99,7 +99,7 @@ date_start = '12312013'
 date_stop = '05282015'  
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
+Part b: The number of days between 12312013 and 05282015 is 513 day.
 
 c.  
 ```
@@ -107,7 +107,7 @@ date_start = '15-Jan-1994'
 date_stop = '14-Jul-2015'  
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE  (answer will be in number of days)
+Part c: The number of days between 15-Jan-1994 and 14-Jul-2015 is 7850 days.
 
 Place code in this file: [q5_datetime.py](python/q5_datetime.py)
 
