@@ -44,7 +44,16 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
+    
+    if type(s) == str:
+        if len(s) < 2: 
+            print ""
+        else:
+            front = s[:2]
+            back = s[-2:]
+            print front + back
+    else:
+        print "Please enter the string as an input."
 
 
 def fix_start(s):
