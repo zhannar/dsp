@@ -15,8 +15,26 @@ def match_ends(words):
     >>> match_ends(['aaa', 'be', 'abc', 'hello'])
     1
     """
-    raise NotImplementedError
+    count = 0
 
+    for word in words:        
+        # Passes over all empty or 1 letter inputs in the list.
+        if len(word) >= 2: 
+            # Passes over those words which don't have the first letter match the last letter.
+            if word[0] == word[-1]:
+            # Bumps the count for all words which pass both requirements.    
+                count += 1
+            else:
+                continue            
+        else:
+            continue
+    print count
+
+"""Test Cases -- All passed
+match_ends(['aba', 'xyz', 'aa', 'x', 'bbb'])
+match_ends(['', 'x', 'xy', 'xyx', 'xx'])
+match_ends(['aaa', 'be', 'abc', 'hello'])
+"""
 
 def front_x(words):
     """
