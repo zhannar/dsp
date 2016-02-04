@@ -97,8 +97,27 @@ def sort_last(tuples):
     >>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
     [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
     """
-    raise NotImplementedError
 
+    """Method 1: Defines a function to determine which key to sort the tuples from.
+    Then sorts it.
+    References: http://pythoncentral.io/how-to-sort-a-list-tuple-or-object-with-sorted-in-python/
+    
+    def getKey(tuple):
+        return tuple[-1]
+    print sorted(tuples, key = getKey)
+    """
+
+    """Method 2: This is a bit more condennsed as it uses a lambda to 
+    define the function and carry it out in the same step."""
+    
+    print sorted(tuples, key = lambda tuple: tuple[-1])    
+
+    
+"""Test Cases -- All passed
+sort_last([(1, 3), (3, 2), (2, 1)])
+sort_last([(2, 3), (1, 2), (3, 1)])
+sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
+"""
 
 def remove_adjacent(nums):
     """
