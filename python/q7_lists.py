@@ -155,7 +155,7 @@ remove_adjacent([3, 2, 3, 3, 3])
 remove_adjacent([])
 """
 
-def linear_merge(list1, list2):
+def linear_merge(left, right):
     """
     Given two lists sorted in increasing order, create and return a
     merged list of all the elements in sorted order. You may modify
@@ -169,4 +169,48 @@ def linear_merge(list1, list2):
     >>> linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
-    raise NotImplementedError
+    
+    """References: This is a python-ified version of the stackoverflow code which 
+    seems to draw upon the wikipedia article.
+    http://stackoverflow.com/questions/3051603/how-to-merge-two-ordered-list-of-objects
+    http://stackoverflow.com/questions/11039217/time-complexity-for-merging-two-sorted-arrays-of-size-n-and-m
+    http://stackoverflow.com/questions/10393627/merging-two-sorted-arrays-into-a-third-one-can-be-done-in-on
+
+    """
+    result = []
+
+    while len(left) > 0 and len(right) > 0:   # As long as the two comparing sets aren't empty...
+        """
+        Uncomment for debugging purposes
+        print "This is the left list, originally: %s" % (left)     
+        print "This is the right list, originally: %s" % (right)
+        """
+
+        if left[0] <= right[0]:             # If the first value of the left set is smaller than the first value of the right set...
+            result.append(left[0])              # Then add it must be the smallest number, and we add it to our result list...
+            left = left[1:]                   # The left list gets redefined to remove the first element.
+        else:
+            result.append(right[0])         # Otherwise, the first value of the right set is smaller than the one on the left... we add it to the result list.
+            right = right[1:]               # The left list gets redefined to remove the first element.  
+        
+        """
+        Uncomment for debugging purposes
+        print "This is the left list, : %s" % (left)
+        print "This is the right list, : %s" % (right)
+        print "This is the result list, : %s" % (result)
+        """
+        
+    # Once one of the lists becomes empty, the other non-empty set must have numbers which are all greater, so we just add it to the end of our result list. 
+    # Note that the syntax of adding the remaining elements is slightly different than above as we may be adding more than one element at a time to result.
+    if len(left) > 0:
+        result = result + left
+    else: 
+        result = result + right
+    print result
+
+
+"""Test Cases -- All passed
+linear_merge(['aa', 'xx', 'zz'], ['bb', 'cc'])
+linear_merge(['aa', 'xx'], ['bb', 'cc', 'zz'])
+linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
+"""
