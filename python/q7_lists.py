@@ -119,7 +119,7 @@ sort_last([(2, 3), (1, 2), (3, 1)])
 sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
 """
 
-def remove_adjacent(nums):
+def remove_adjacent(numbers):
     """
     Given a list of numbers, return a list where all adjacent equal
     elements have been reduced to a single element, so [1, 2, 2, 3]
@@ -135,8 +135,25 @@ def remove_adjacent(nums):
     >>> remove_adjacent([])
     []
     """
-    raise NotImplementedError
+    
+    last_number = None
+    remove_adjacent_list = []
 
+    for current_number in numbers:          #Begins to look through list, number by number
+        if last_number == current_number:   #If there are adjacent equal numbers, moves on
+            pass
+        else:
+            remove_adjacent_list.append(current_number)
+            last_number = current_number    #Once the number has been added to the list, it becomes the new 'last number'
+
+    print remove_adjacent_list
+
+"""Test Cases -- All passed
+remove_adjacent([1, 2, 2, 3])
+remove_adjacent([2, 2, 3, 3, 3])
+remove_adjacent([3, 2, 3, 3, 3])
+remove_adjacent([])
+"""
 
 def linear_merge(list1, list2):
     """
