@@ -50,8 +50,38 @@ def front_x(words):
     >>> front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
     ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
     """
-    raise NotImplementedError
 
+    # Disclaimer: This code doesn't account for uppercase words. This is a feature to 
+    # possibly add later. 
+
+    """Step 1 - This outer logic will iteratively go through each word in the list, 
+    and assign the items in the list to either a list of words that begin with 
+    the special letter, or words which don't."""
+
+    special_letter = "x"
+    special_words_list = []
+    other_words_list = []
+
+    for word in words:
+        if word[0] == special_letter:
+            special_words_list.append(word)
+        else:
+            other_words_list.append(word)
+
+    """Step 2 - Sorts the two lists alphabettically."""
+    special_words_list.sort()
+    other_words_list.sort()
+
+    """Step 3 - Recombines the two lists."""
+    sorted_words = special_words_list + other_words_list
+    print sorted_words
+    return sorted_words
+    
+"""Test Cases -- All passed
+front_x(['bbb', 'ccc', 'axx', 'xzz', 'xaa'])
+front_x(['ccc', 'bbb', 'aaa', 'xcc', 'xaa'])
+front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
+"""
 
 def sort_last(tuples):
     """
