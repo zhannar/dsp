@@ -1,17 +1,21 @@
-
 # Step 0: Bring the data in.
 data = "faculty.csv"
 import pandas as pd
 faculty_df = pd.read_csv(data)
 
-# Step 1 & 2 : Collapse multiple entries in a column to a string.
-degree_string= str()
+
+# ----------------------------------------------------------------------
+# Q1. Find how many different degrees there are, and their frequencies: 
+# Ex: PhD, ScD, MD, MPH, BSEd, MS, JD, etc.
+# ----------------------------------------------------------------------
+
+
+# Step 1 : Collapse multiple entries in a column to a string.
+degree_string = str()
 
 for set_of_degrees in faculty_df[" degree"]:
 	degree_string += set_of_degrees + " " #The space is added as a precaution
 	
-
-
 # 2) Clean-Up -
 # Note: 'replace' method only works on strings.
 
@@ -55,4 +59,21 @@ def dict_counts(list):
 	print dictionary
 
 print dict_counts(degrees_list)
+
+# ----------------------------------------------------------------------
+# Q1. Q2. Find how many different titles there are, and their frequencies: 
+# Ex: Assistant Professor, Professor
+# ----------------------------------------------------------------------
+
+# Step 1: Collapse multiple entries in a column to a string & remove extra info.
+
+titles_list = []
+
+for title in faculty_df[" title"]:
+	title = title.replace("of Biostatistics", "")
+	title = title.replace("is Biostatistics", "")
+	print title
+	titles_list.append(title.rstrip()) #rstrip removes any extra spaces hanging around...
+
+print dict_counts(titles_list)
 
