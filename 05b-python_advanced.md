@@ -19,7 +19,9 @@ This data is available in this file:  [faculty.csv](python/faculty.csv)
 
 ####Q1. Find how many different degrees there are, and their frequencies: Ex:  PhD, ScD, MD, MPH, BSEd, MS, JD, etc.
 
->> REPLACE THIS WITH YOUR RESPONSE
+>> Degree & its Count: 
+
+>> {'MD': 1, 'MA': 1, 'Sc.D.': 6, 'Ph.D.': 31, 'MPH': 2, 'M.S.': 2, 'JD': 1, 'B.S.Ed.': 1}
 
 
 ####Q2. Find how many different titles there are, and their frequencies:  Ex:  Assistant Professor, Professor
