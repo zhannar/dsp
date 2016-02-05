@@ -89,3 +89,32 @@ for email in faculty_df[" email"]:
 	email_list.append(email.rstrip())
 
 print email_list
+
+# ----------------------------------------------------------------------
+# Q4. Find how many different email domains there are (Ex: 
+#	mail.med.upenn.edu, upenn.edu, email.chop.edu, etc.). 
+#	Print the list of unique email domains.
+# ----------------------------------------------------------------------
+
+email_domain_list = []
+
+for email in email_list:
+	######## Part 1: Extract the domain out of the email ######################
+
+	# Method 1: This uses regex to capture everything which comes after the @
+	#email_domain = re.findall('.*@([^ ]*)',email)
+	#print email_domain
+
+	# Method 2: This splits the email into two parts, everything to the left 
+	# of the @ and everything to the right. The stuff to the right is the email domain
+	z = email.split("@")
+	email_domain = z[1]
+	
+	####### Part 2:  Check if the email_email has already been added to the domain list.
+	# If it hasn't, add it. ############################################
+	if email_domain in email_domain_list:
+		continue
+	else:
+		email_domain_list.append(email_domain)
+
+print email_domain_list
