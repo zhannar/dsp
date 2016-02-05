@@ -83,4 +83,9 @@ print dict_counts(titles_list)
 # Print the list of email addresses.
 # ----------------------------------------------------------------------
 
-print faculty_df
+email_list = []
+	
+for email in faculty_df[" email"]:
+	email_list.append(email.rstrip())
+
+print email_list
