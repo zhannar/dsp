@@ -61,19 +61,26 @@ def dict_counts(list):
 print dict_counts(degrees_list)
 
 # ----------------------------------------------------------------------
-# Q1. Q2. Find how many different titles there are, and their frequencies: 
+# Q2. Find how many different titles there are, and their frequencies: 
 # Ex: Assistant Professor, Professor
 # ----------------------------------------------------------------------
 
-# Step 1: Collapse multiple entries in a column to a string & remove extra info.
+# Step 1: Collapse multiple entries in a column to a list & clean up/remove extra info.
 
 titles_list = []
 
 for title in faculty_df[" title"]:
 	title = title.replace("of Biostatistics", "")
 	title = title.replace("is Biostatistics", "")
-	print title
 	titles_list.append(title.rstrip()) #rstrip removes any extra spaces hanging around...
 
+
+# Step 2: Convert list into dicitonary of counts...
 print dict_counts(titles_list)
 
+# ----------------------------------------------------------------------
+# Q3. Search for email addresses and put them in a list. 
+# Print the list of email addresses.
+# ----------------------------------------------------------------------
+
+print faculty_df
