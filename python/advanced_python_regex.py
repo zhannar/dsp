@@ -65,6 +65,14 @@ print dict_counts(degrees_list)
 # Ex: Assistant Professor, Professor
 # ----------------------------------------------------------------------
 
+# Method 1: Using pandas built in series method 'value_counts().' This is
+# less favorable for the degrees question because while ppl generally have 
+# only 1 title, they may and the dataset confirms not infrequently have 
+# multiple degrees.
+
+print faculty_df[" title"].value_counts()
+
+# Method 2: Original Method, creating a dictionary of counts
 # Step 1: Collapse multiple entries in a column to a list & clean up/remove extra info.
 
 titles_list = []
@@ -77,6 +85,7 @@ for title in faculty_df[" title"]:
 
 # Step 2: Convert list into dicitonary of counts...
 print dict_counts(titles_list)
+
 
 # ----------------------------------------------------------------------
 # Q3. Search for email addresses and put them in a list. 
