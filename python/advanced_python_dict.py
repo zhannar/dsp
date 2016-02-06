@@ -44,6 +44,43 @@ def title_parser(title):
 # Create empty dictionary to contain info:
 faculty_dict = {}
 
+# Reference:
+# http://stackoverflow.com/questions/16476924/how-to-iterate-over-rows-in-a-dataframe
+
+for index, row in faculty_df.iterrows():
+	# Part 1 - Extract out the name
+	full_name = row['name']
+	name_parts = full_name.split()
+	last_name = name_parts[-1]
+
+	# Part 2 - Extract and parse the degrees
+	degrees = degree_parser(row[' degree'])
+
+	# Part 3 - Extract and parse the title
+	title = title_parser(row[' title'])
+
+	# Part 4 - Combine them together into a list (along with email)
+	teacher_info_list = [degrees, title, row[' email']]
+
+	# Part 5 - Check if that last name is in the fictionary already. 
+	# If not, add them to a dictionary.
+	# If yes, append it.
+	if last_name not in faculty_dict:
+		faculty_dict[last_name] = teacher_info_list
+	else:
+		faculty_dict[last_name] = [faculty_dict[last_name], teacher_info_list] 
+
+# References:
+# As dictionaries don't have a defined order, this provides a way to extract
+# subsets of dictionaries.
+# http://stackoverflow.com/questions/4194365/python-how-to-get-a-subset-of-dict/4194402#4194402
+
+import itertools
+def get_range(dictionary, begin, end):
+  print dict(itertools.islice(dictionary.iteritems(), begin, end)) 
+
+get_range(faculty_dict,0,3)
+
 """
 # ----------------------------------------------------------------------
 # Q7. The previous dictionary does not have the best design for keys. 
@@ -94,6 +131,8 @@ def get_range(dictionary, begin, end):
   print dict(itertools.islice(dictionary.iteritems(), begin, end)) 
 
 get_range(faculty_dict,0,3)
+
+
 
 """
 # ----------------------------------------------------------------------
