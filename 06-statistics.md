@@ -72,7 +72,74 @@ Bayes' Theorem is an important tool in understanding what we really know, given 
 
 Elvis Presley had a twin brother who died at birth.  What is the probability that Elvis was an identical twin? Assume we observe the following probabilities in the population: fraternal twin is 1/125 and identical twin is 1/300.  
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+<hr>
+##### *My Answer:*
+
+This question asks us, what is the probability that Elvis is an identical twin given knowledge that he was a twin. This is a conditional probability and merits the use of Bayes Theorem. As a reminder, **this is Bayes Theorem:**
+
+![alt text](bayes.jpg =400x100)
+
+**Step 1:** For our purposes, our variables are translated as as:
+
+```
+A = Elvis is an identical twin.
+B = Elvis is a twin.
+```
+**Step 2:** Converting this into mathematical notation gives us:
+
+```
+P(A|B) = P(Elvis is an identical twin | Elvis is a twin)
+```
+
+**Step 3:** Now we use Bayes Theorem to get us...
+
+```
+P(A|B) = P(Elvis is a Twin | Elvis is an identical Twin) * P(Elvis is an Identical Twin) / P(Elvis is a Twin)
+```
+
+**Step 4:** First, we'll employ some common logic to simplify the calculations. The first conditional, P(B|A) or that probability that Elvis is a twin given that he's an identical twin is 1. 
+
+```
+P(A|B) = 1 * P(Elvis is an Identical Twin) / P(Elvis is a Twin)
+```
+**Step 5:** Secondly, we are given in the problem that the probability that someone is born an identical twin is 1/300. From that, we can extrapolate that knowing nothing else, the probability that Elvis were born an identical twin should also be 1/300. Thus, we fill in the second part of the numerator: 
+
+```
+P(A|B) = 1 * (1/300) / P(Elvis is a Twin)
+```
+
+**Step 6:** Thirdly, the denominator or P(B)=P(Elvis is a twin) requires us to us to make some conceptual assumptions: 
+
+- there are only two ways of being a twin; one is either a fraternal twin or an identical twin.
+- one cannot be both an identical and a fraternal twin (at least to the same person); they are mutually exclusive
+- one cannot be a form of being a twin which is neither fraternal or identical / there are no other ways of being a twin.
+
+
+All this leads us to realize that P(Elvis is a Twin) is equivalent to the mathematical concept of a union and gets translated as follows:
+
+```
+P(Elvis is a Twin) = The union of Elvis being an identical twin and Elvis being a fraternal twin minus the intersection of that being the case. 
+```
+That is.... 
+
+```
+P(Elvis is a Twin) = P(Elvis is Fraternal) + P(Elvis is Identical)
+P(Elvis is a Twin) = (1/125) + 					(1/300)
+P(Elvis is a Twin) = (12/1500) + 				(5/1500)
+P(Elvis is a Twin) = (17/1500) 
+```
+
+So, plugging that into our headline equation and solving...
+
+```
+P(A|B) = 1 * (1/300) / P(Elvis is a Twin)
+P(A|B) = 1 * (1/300) / (17/1500)
+P(A|B) = 1500 / (300 * 17)
+P(A|B) = 1500 / (300 * 17)
+P(A|B) = 0.294
+
+```
+##### *Thus, the probability that Elvis was an identical twin given knowledge that he was a twin, is 29%.*
 
 ---
 
