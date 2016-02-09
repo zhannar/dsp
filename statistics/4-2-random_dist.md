@@ -6,7 +6,6 @@ Generate 1000 numbers from random.random and plot their PMF and CDF. Is the dist
 
 ### A. Communicate the problem: 
 
-FIX MEFIX MEFIX MEFIX MEFIX MEFIX MEFIX MEFIX ME
 This problem serves to show the conceptual similarity between drawing numbers 'randomly' and drawing numbers from the uniform distribution. 
 
 
