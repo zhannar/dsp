@@ -114,7 +114,6 @@ P(A|B) = 1 * (1/300) / P(Elvis is a Twin)
 - one cannot be both an identical and a fraternal twin (at least to the same person); they are mutually exclusive
 - one cannot be a form of being a twin which is neither fraternal or identical / there are no other ways of being a twin.
 
-
 All this leads us to realize that P(Elvis is a Twin) is equivalent to the mathematical concept of a union and gets translated as follows:
 
 
@@ -182,7 +181,6 @@ The goal of frequentist inference is to come up with a frequency gaurantee or a 
 - [Quora](https://www.quora.com/What-is-the-difference-between-Bayesian-and-frequentist-statisticians) 
 - [Stack Overflow (Stats)](http://stats.stackexchange.com/questions/22/bayesian-and-frequentist-reasoning-in-plain-english) 
 - [George Casella - U. of Florida - Class PDF](http://www.stat.ufl.edu/archived/casella/Talks/BayesRefresher.pdf) 
-- [Youtube]( ... ) 
 - [Normal Deviate Wordpress]( https://normaldeviate.wordpress.com/2012/11/17/what-is-bayesianfrequentist-inference/ ) 
 - [Keith Weinstein](http://blog.keithw.org/2013/02/q-what-is-difference-between-bayesian.html) 
 
