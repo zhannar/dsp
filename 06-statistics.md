@@ -117,6 +117,7 @@ P(A|B) = 1 * (1/300) / P(Elvis is a Twin)
 
 All this leads us to realize that P(Elvis is a Twin) is equivalent to the mathematical concept of a union and gets translated as follows:
 
+
 ```
 P(Elvis is a Twin) = The union of Elvis being an identical twin and Elvis being a fraternal twin minus the intersection of that being the case. 
 ```
@@ -146,7 +147,103 @@ P(A|B) = 0.294
 ###Q8. Bayesian &amp; Frequentist Comparison  
 How do frequentist and Bayesian statistics compare?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+
+**Definitions of Probability: Objective vs. Subjective -** Neither approach is wrong or right. They are merely two sides of the same coin. If one is walking down the street and sees a giant turtle with a purple hat. One might ask, what's the probability of that event? The frequentist and Baysian approuches arise out of a foundamental difference in how they see probabilty of an event. The frequentists take their starting point with the giant turtle and his purple hat. The Baysians start with the person observing everything. For the frequentists, probabiilty comes from objective physical phenomina. Ergo, they'd say the giant turtle is "a result of sampling: observed frequencies of things in a sample." The Bayesians, on the other hand, think that probabilities are in the mind of the observer (subjective). Ergo, the giant turtle is a state of knowledge or confidence rather than an objective fact about the world (statistics/frequencies). 
+
+**Defined by Goals, Not Methods:** Surely if they have these two radically different viewpoints, they will do different things. Not necessarily. The split between the frequentists and Baysian approuch to inference is defined by their **goals** and _**NOT**_ by their **methods.** This is very important. This means, that if you were to see a person performing this or that statistical method, that alone would not inform you of whether that analysis was being done in a baysian or a frequentist method. Each is instead defined by their **goals** and the kinds of statements they're interested in making. I will touch on the difference in goals later in the next section.
+
+**Models and Parameters that Define Them** In both cases, the frequentist and Bayesian would desire to model the data or come up with a distribution to explain the observed data given a set of parameters. In both cases, the would likely want to specify those parameters by a method of greatest liklihood -- that is, choose the parameters which would have the greatest liklihood of producing the observed data. However, the way these parameters are interepreted is different. The frequentists view the parameters as fixed but not known. As a result, they envision if the situation/experiement were *repeated* multiple times, the underlying system is intrinsically deterministic/should stay the same and therefore produce the same results. As a result, they define their certainty in their estimates against the background of these repeated results.
+
+The Bayesians however view the parameters as mere instantiations of random variables -- the system itself is random. As such, they cling tightly to the data they do have (data is fixed), and are more likely to vary their belief in what the underlying random process which produces it. The goal of Bayesian inference is thus to describe or analyze your degree of beliefs. 
+
+The goal of frequentist inference is to come up with a frequency gaurantee or a confidence interval. This number, let's say 95%, is to be interpreted as holding true 95% of the time if the situation were repeated 100 times. The idea of repeatability of an event is highlighted. 
+
+**I've summerized these and other nuances in a table:**
+
+| Dimension | Frequentist		 | Bayesian |
+| :------------ | :-----------------: | :------------: |
+|*What's probability?* | A result of sampling: observed frequencies of things in a sample.| Bayesians think that probabilities are in the mind (subjective). They are states of knowledge or confidence rather than objective facts about the world (statistics/frequencies).|
+|*Probability: Objective or Subjective?* | Objective | Subjective|
+|*Focus is on:*         | the data        | the priors
+|*Starts with a distribution (or a 'model' more generallly)?*         		| Yes        | Yes
+|*Use liklihood implied by the data/model?* | Yes        | Yes
+|*Data are...* | a repeatable random sample (there is frequency)|are observed from the realized sample |
+|*Underlying parameters:* |remain constant during this repeatable process |unknown and described probabilistically|
+|*Interpretation of Parameters*         | fixed but unknown quantities.         | Random Variables
+|*What's fixed?* |Parameters |Data|
+|*Answer Form:* | Answer is a confidence statement.      | Answer is a probability statement.
+|*Interval:* | frequentist confidence interval        | Bayesian credible interval
+|*Answer Example*         |  "With 95% confidence based on the data I observed, the population mean is between 2.3 and 4.2."          |"There is a 95% probability that the population mean is between 2.3 and 4.2 (given the data I observed)".  
+|*Making Predictions (Joke)*         | "I threw this die twice and it came up 5 twice. So I conclude this die will always come up 5"        | "I threw this die five hundred times and it came up 5 every single time. I did start with a very strong bias towards the die being fair, though, so my expectation that the die will come up 5 if I throw it again is slightly more than 1/6."
+|*Common Advocates* |Neymann, Person, Wald |Bayes, Laplace, de Finetti|
+
+*References:*
+
+- [Quora](https://www.quora.com/What-is-the-difference-between-Bayesian-and-frequentist-statisticians) 
+- [Stack Overflow (Stats)](http://stats.stackexchange.com/questions/22/bayesian-and-frequentist-reasoning-in-plain-english) 
+- [George Casella - U. of Florida - Class PDF](http://www.stat.ufl.edu/archived/casella/Talks/BayesRefresher.pdf) 
+- [Youtube]( ... ) 
+- [Normal Deviate Wordpress]( https://normaldeviate.wordpress.com/2012/11/17/what-is-bayesianfrequentist-inference/ ) 
+- [Keith Weinstein](http://blog.keithw.org/2013/02/q-what-is-difference-between-bayesian.html) 
+
+
+<!---
+[comment]: <> (This is storing additional things I've written or consider adding to this.
+Reference: http://stackoverflow.com/questions/4823468/comments-in-markdown
+
+
+0) Ways to introduce my answer to the question and explain how i have explained.
+##### *My Answer:*
+While it may be possible to _**explain**_ the frequentist and Baysian views in a sentence or two, it's impossible for the reciever to truly _**understand**_ that answer in as short a period of time. To understand their meanings, the similarities, and the differences requires an iterative approuch that spans across different modes of explanations. 
+
+This explanation will be roughly structured as follows:
+
+1. Basic Definitions (Abstract)
+2. Some Examples (Specific)
+3. Highlighting similarities & Differences (Abstract)
+
+
+### By a definition
+
+1) Ways ot Introduce the Topic:
+
+- "In this modern world, the notion of probability is unavoidable. Just as our civilizatio no longer operates in the geocentric mindset where the earth is the center of everything, we as individuals understand that we are the center of 
+- We change as people
+- Unlike the ameoba who has no history and can operate / respond to only things in their immediate environment, we humans understand that beside our present here and now, there are others and they themselves have a here and now, or alternatively that other presents have existed as well.
+- If one takes the starting point of any problem for which one is using statistics, one faces the task of measurement and the notion of probability.
+- If a tree falls in the forrest and no one is there to see it, did a tree fall. 
+- The root of all scientific inquiry starts with an event observed by someone. If that someone 
+
+
+2) what's missing.... EXAMPLES!! EXAMPLES!!! EXAMPLES!!!
+
+Frequentists do not allow themselves to assign probability statements to parameters. 
+
+Confidence Intervals Do Not Represent Degrees of Belief.
+Posterior Intervals Do Not (In General) Have Frequency Coverage Properties.
+
+3) This is a great example and should be reconsidered and analyzed further...:
+http://blog.keithw.org/2013/02/q-what-is-difference-between-bayesian.html
+
+
+### By an Example
+
+Let's consider a few examples.
+
+If you go into a doctor's office complaining of pain in your chest. The relevant question here is: what's causing your pain?
+
+- **The Frequentist** looks at this by considering a population of people who are also exhibiting that particular sympton (chest pain). There are some number of different causes that's leading all the people in that population to exhibit that same symptom, and those causes pop up in different frequencies. 
+
+### Description vs Prescription
+
+| Statement | Truth or False| Explanation
+| ----------- | -----------| -----------
+| There are frequentist techniques and baysian techniques. | False| They are differentiated by their goals, not their methods
+| Using Bayes Theorem/Rule is Bayesian Inference          | False| The former is a method/technique and is not sufficient to differentiate between approuches.
+| Using Bayes Nets is Bayesian Inference        | False| The former is a method/technique and is not sufficient to differentiate between approuches.
+| Center        | False| The former is a method/technique and is not sufficient to differentiate between approuches.
+
+-->
 
 ---
 
