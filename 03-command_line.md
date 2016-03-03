@@ -28,7 +28,13 @@ What do the following commands do:
 `ls -t`  
 `ls -Glp`  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+> `ls` : lists all the files in a given directory ("list directory")
+`ls -a` : lists all the files in a given directory + hidden files
+`ls -l` : lists all the files in a given directory + (Unix file types, permissions, number of hard links, owner, group, size, last-modified date)
+`ls -lh`: same as ls -l but w/ 'human readonable' file sizes ("748B" instead of "748")
+`ls -lah` : same as ls -lh but also including hidden files
+`ls -t`: same as ls but sorts by most recent modification time
+`ls -Glp` : same as ls -l, but the "G" color codes the folders a different color, and the "p" adds a "/" at the end of them
 
 ---
 
@@ -36,7 +42,11 @@ What do the following commands do:
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+> `ls -1` : lists all the files in a given directory, 1 per line
+`ls -R` : lists all the files in a given directory + subdirectories
+`ls -l` : same as ls -l but without the owner's name
+`ls -m`: display names in a single line, with commas separating names
+`ls -x` : same as ls but outputs across rows, instead of by columns
 
 ---
 
