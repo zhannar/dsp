@@ -59,7 +59,11 @@ We will also use Jupyter (IPython) notebooks, but this does not remove the need 
 
 What terminal editor will you use? How did you make your decision?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> I chose VIM because...
+1) It runs default on most computers... so it gives me a large base of computers to work from.
+2) It seems like if you'll be in the programming business for any extended period of time, you'll have to learn it eventually... I might as well bite the bullet.
+3) It allows for faster programming once you get good at it.
+4) It seems to have more fun tutorials (e.g. VIM tutor, OPEN VIM, VIM Adventures) to learning it than others terminal editors (e.g. emacs) 
 
 --
 
