@@ -59,7 +59,7 @@ We will also use Jupyter (IPython) notebooks, but this does not remove the need 
 
 What terminal editor will you use? How did you make your decision?
 
->> I chose VIM because...
+> I chose VIM because...
 1) It runs default on most computers... so it gives me a large base of computers to work from.
 2) It seems like if you'll be in the programming business for any extended period of time, you'll have to learn it eventually... I might as well bite the bullet.
 3) It allows for faster programming once you get good at it.
@@ -71,6 +71,31 @@ What terminal editor will you use? How did you make your decision?
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+> I have previous experience using Sublime Text 2 and I am learning to use PyCharm because (and these coincide with being interesitng features):
 
+>1) it can be integrated with version control
+2) it's customized for python and ipython notebooks.
+3) Soft wrapping - so text 
+4) It has an integrated built in terminal and python console
+5) It has automatic completion for various python codes
+6) Provides a preview when hovering of what code is found in select areas
+ of your document when hovering over it's location in the scrolling bar area.
+7) HTML preview for markdown files
+8) A lot of tab flexibilt
+9) Ability to view and edit csv files as tables! woo!
  
+> Customization can be accomplished by going to Pycharm -> Preferences> ... 
+
+> Some useful keyboard shortcuts are:
+
+> * Executes highlighted code in Python Script File (.py) 
+control + shift + e
+control + E (uppercase E)
+
+> * Runs entire Python Script File (.py) 
+control + shift + r
+control + R (uppercase R)
+
+> * Debugs entire Python Script File (.py) 
+control + shift + d
+control + D (uppercase D)
