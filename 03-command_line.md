@@ -103,7 +103,18 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+> xargs is used to 'package up' a set multiple outputs to be sent as an input into a subsequent command. 
 
+> The picture in blue provides a good diagram:
+> 
+> ![xargs](xargs.jpg)
+
+> An example of this is the following:
+> temp $ls *.txt |xargs cat
  
+> This takes all the text files in the given directory, and prints out its contents (cat) one by one. 
+
+> The following sequence of commands shows how this is done step by step:
+>
+![xargs example](xargs_example.jpg)
 
