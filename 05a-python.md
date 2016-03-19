@@ -36,7 +36,13 @@ A list can be defined as:
 References:
 http://stackoverflow.com/questions/626759/whats-the-difference-between-list-and-tuples#
 
+
+Tupples are more ideal to being used to store keys in dictionaries beccause they are immutale)
+
+
 ---
+
+
 
 ###Q2. Lists &amp; Sets
 
