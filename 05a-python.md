@@ -226,34 +226,69 @@ Then, when you're going through the isles and looking at all the colorful items,
 
 ###Q3. Lambda Function
 
-Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
-
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+**Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.**
 
 A 'lambda' in python can be thought simply as a 1-time or disposable function. It is a way of defining a particular function-ality, but without going through the full process of actually defining a function. Because no function is ever defined and given a name, it can't be used outside of the given context or scope from which it is defined. Because a name is never given to the function/functionality, it is also called setting up an 'anonymous function."
 
-Example #1: Here's an example where you have a list of ages. If I want to only see those ages which are greater than 25, I can merely use a lambda function with filter to accomplish that quickly...
+**Example #1:** Here's an example where you have a list of ages. If I want to only see those ages which are greater than 25, I can use a lambda function with filter to accomplish that quickly...
 
->>> ages_list = [4,5,63,6,53,23,41]
->>> filter(lambda x: x>=15, ages_list)
-[63, 53, 23, 41]
+	>>> ages_list = [4,5,63,6,53,23,41]
+	>>> filter(lambda x: x>=15, ages_list)
+	[63, 53, 23, 41]
 
-Example #2: Let's say instead had a dictionary of ages, where people's names are keys and their value pairs are the ages. If I wanted to sort these people by their ages, I could use a lambda in the "key" aregument of sorted:
+**Example #2:** If instead of a tuple, the same information was contained in a dictionarywhere people's names are keys and their value pairs are the ages. If I wanted to sort these people by their ages, I could use a lambda in the "key" aregument of sorted:
 
->>> ages_dict = {
-	'carl' : 4, 
-	'danny': 5,
-	'matt': 63,
-	'roxanne':6,
-	'bjork': 53,
-	'madonna':23,
-	'shepard':41}
+	>>> ages_dict = {
+				'carl' : 4, 
+				'danny': 5,
+				'matt': 63,
+				'roxanne':6,
+				'bjork': 53,
+				'madonna':23,
+				'shepard':41}
 
->>> sorted(ages_dict.iteritems(), key = lambda (k,v):(v,k))
-[('carl', 4), ('danny', 5), ('roxanne', 6), ('madonna', 23), ('shepard', 41), ('bjork', 53), ('matt', 63)]
+	>>> sorted(ages_dict.iteritems(), key = lambda (k,v):(v,k))
+	[('carl', 4), ('danny', 5), ('roxanne', 6), ('madonna', 23), ('shepard', 41), ('bjork', 	53), ('matt', 63)]
 
+
+**Example #3:** A simpler example could occur if one had a list of tuples of celebrity information. One can easily sort by different fields by entering a different index from within the lambda notation. 
+
+	celebrity_info = zip(names,ages,income)
+	In[62]: celebrity_info
+	Out[59]: 
+		[('matt', 63, 1300300),
+		 ('matt', 5, 10599000),
+		 ('danny', 4, 55000),
+		 ('carl', 41, 240000),
+		 ('shepard', 6, 16000),
+		 ('roxanne', 53, 2834500),
+		 ('bjork', 23, 1300300)]
+ 
+	#Sorting by age... 
+	In[63]: sorted(celebrity_info, key = lambda person: person[1])
+	Out[60]: 
+		[('danny', 4, 55000),
+		 ('matt', 5, 10599000),
+		 ('shepard', 6, 16000),
+		 ('bjork', 23, 1300300),
+		 ('carl', 41, 240000),
+		 ('roxanne', 53, 2834500),
+		 ('matt', 63, 1300300)]
+	 
+	#Sorting by income...
+	In[64]: sorted(celebrity_info, key = lambda person: person[2])
+	Out[61]: 
+	[('shepard', 6, 16000),
+	 ('danny', 4, 55000),
+	 ('carl', 41, 240000),
+	 ('matt', 63, 1300300),
+	 ('bjork', 23, 1300300),
+	 ('roxanne', 53, 2834500),
+	 ('matt', 5, 10599000)]
+	
 References:
 http://www.saltycrane.com/blog/2007/09/how-to-sort-python-dictionary-by-keys/
+http://pythoncentral.io/lambda-function-syntax-inline-functions-in-python/
 
 ---
 
