@@ -94,20 +94,135 @@ Differences - A posteriori, in usage
 1. Homo vs. Hetereogeneity of Elements - Generally list objects are homogenous and tuple objects are hetereogenious. That is, lists are used for objects/subjects of the same type (like all presidential candidates, or all songs, or all runners) whereas  although it's not forced by), whereas tuples are more for heterogenous objects.
 
 2. Looping vs. Strucutres - Although both allow for looping (for x in my_list...), it only really makes sense to do it for a list. Tuples are more appropriate for structuring and presenting information (%s %s residing in %s is an %s and presently %s % ("John","Wayne",90210, "Actor","Dead"))
-Lists are for looping, tuples are for structures i.e. "%s %s" %tuple.
+
 	
 ###Q2. Lists &amp; Sets
 
-How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
+**How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?**
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
-Question Status: In progress
->>
->>
->>
+In the question above, I have already described the essence of a list. A set is an unordered collection of unique items whose primary purpose is in being used to tell whether an item is or is not in it. When you're outside your home, a common question might be do I have my charger? do I have my notebook? A set can be viewed as a bag. You either have the item or you don't. You don't really care about 'where it is' in relation to the other items in the bag.
+
+Another example could be the set of groceries to buy at the store. Let's say you you have a piece of paper on your refrigerator where you add an item when you realize it needs to be bought. On Monday, you add "coffee", Tuesday "eggs", Wedesday "avocados", thursday "grapes", and then on Friday you really wanted Eggs Benedict but in realizing you don't have eggs, you add "eggs" again. When you are really to go to the store, the fact that "eggs." However, for the purposes of shopping at the store, you only need to visit the eggs section once regardless of how many times you thought about buying it. If you turn your paper into a set, all the duplicates get removed:
+
+	>>> paper = ["coffee","eggs","avocados","grapes","eggs"]
+	>>> groceries = set(paper)
+	>>> groceries
+	set(['coffee', 'avocados', 'eggs', 'grapes'])
 
 
----
+Then, when you're going through the isles and looking at all the colorful items, you can quickly check if an item is on the set of groceries to buy:
+
+	>>> "eggs" in groceries
+	True
+	>>> "milk" in groceries
+	False
+
+
+**Performance on checking for membership is faster for sets than lists.** As sets are implemented using hash tables, membership testing is essentially constant O(1) regardless of the size of the set. Lists, in contrast are implemented as dynamic arrays. Membership testing in lists therefore requires testing elements sequentially for equality and thus changes based on the size of the list: O(n). As a result, it takes longer and longer as the list becomes bigger and bigger. It should be noted that this difference only really applies for larger sets/lists... the difference may be negligable for small or medium ones.
+
+**To summerize some of the finer details...**
+
+**Similarities:**
+
+1. *Iteration* - Both allow for iteration.
+
+		for item in groceries:      
+		  print item
+
+
+2. *Length / Item count* - Both provide the number of elements in the container using the len() function.
+
+3. *Mutability, to some extent* - (Like lists) Items in sets can be added and removed, but only if you know what they are first. In sets, is done via methods like update, remove, pop, etc. This has its peculiarities with sets however...
+
+
+		>>> groceries
+		set(['coffee', 'eggs', 'grapes', 'avocados'])
+
+		# Adding "milk" - wrong way
+		>>> groceries.update("milk")
+		>>> groceries
+		set(['coffee', 'i', 'eggs', 'm', 'l', 'grapes', 'avocados', 'k'])
+
+		# Adding "milk" - right way
+		>>> groceries.update(["milk"])
+		>>> groceries
+		set(['coffee', 'i', 'eggs', 'm', 'l', 'milk', 'grapes', 'avocados', 'k'])
+
+		# Removing the coffee...
+		>>> groceries.remove("coffee")
+		>>> groceries
+		set(['i', 'eggs', 'm', 'l', 'milk', 'grapes', 'avocados', 'k'])
+
+
+**Differences:**
+
+1. *Syntax* - Lists use [] whereas sets use {}.
+
+2. *Dupicates* - Lists allow for duplicates, but sets do not.
+
+3. *Special "Set" functionality :Union/Intersection/Difference* - Sets suport special functionality for comparing sets:
+
+
+		>>> a
+		set([1, 2, 3, 4])
+		>>> b
+		set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+		>>> a & b		#Letters in both a and b
+		set([1, 2, 3, 4])
+		>>> a - b		#Letters in a but not in b
+		set([])
+		>>> b - a		#Letters in b but not in a
+		set([5, 6, 7, 8, 9, 10, 11, 12])
+		>>> a ^ b		#Letters in a but not in b
+		set([5, 6, 7, 8, 9, 10, 11, 12])
+		>>> a | b		# Letters in either a or b
+		set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+
+		>>> a.difference(b)
+		set([])
+		>>> b.difference(a)
+		set([5, 6, 7, 8, 9, 10, 11, 12])
+		>>> a.issubset(b)
+		True
+		>>> b.issubset(a)
+		False
+		>>> a.issuperset(b)
+		False
+		>>> b.issuperset(a)
+		True
+
+
+4. *Comparing & Sorting* - Unlike lists (described above), sets are compared only by the sheer number of elements contained within them:
+
+		>>> a
+		set([1, 2, 3, 4])
+		>>> b
+		set([0, 1, 2, 3, 4])
+		>>> a>b
+		False
+		>>> b>a
+		True
+
+4. *Types of Values* - Lists can have any kind of element, but tuples can only have hashable elements. That is, lists can have lists as elements, but sets cannot. Both can have strings, numbers, and tuples.
+
+		>>> a
+		set([1, 2, 3, 4])				# Set contains only integers
+
+		>>> a.update("abc")
+		>>> a
+		set(['a', 1, 2, 3, 4, 'c', 'b']) 	# Set containers integers & characters
+
+		>>> a.update([tuple])
+		>>> a							# Set includes a tuple
+		set(['a', 1, 2, 3, 4, 'c', ('abc', 'bcd', 'dep'), 'b'])
+
+		>>> list
+		[1, 2, 3, 4, 5]
+		>>> a.update([list])				# Set can’t add a list
+		Traceback (most recent call last):
+		File "<stdin>", line 1, in <module>
+		TypeError: unhashable type: 'list'
+
 
 ###Q3. Lambda Function
 
