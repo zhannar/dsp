@@ -64,8 +64,7 @@ thinkplot.Show(xlabel='Moms age (yrs)',
                     xlim=[10, 45],
                      ylim=[0, 16],)                   
 ```
-![alt text](weights_ages.png =400x350)
-
+<a href="url"><img src="weights_ages.png" height="400"></a>
 ```
 # Hexbin Scatterplot
 thinkplot.HexBin(mom_age, baby_weight)
@@ -83,9 +82,10 @@ thinkplot.Show(xlabel='Moms age (yrs)',
               )
               
 ```
-![alt text](weights_ages_hexbin.png =400x350)
 
-![alt text](weights_ages_hexbin_detail.png =400x350)
+<a href="url"><img src="weights_ages_hexbin.png" height="400"></a>
+<a href="url"><img src="weights_ages_hexbin_detail.png" height="400"></a>
+
 
 ##### Step 4: Make percentile plot of mother's age and baby's birthweight.
 
@@ -110,7 +110,8 @@ for percent in [25, 50, 75]:
         label = '%s' % (percent)
         thinkplot.Plot(ages, weights, label=label)
 ```
-![alt text](weights_ages_percentile.png =400x350)
+
+<a href="url"><img src="weights_ages_percentile.png" height="400"></a>
 
 ##### Step 5: Define Covariance
 
