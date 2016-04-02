@@ -68,8 +68,7 @@ thinkplot.PrePlot(2)
 thinkplot.Pmfs([actual_dist, biased_dist])
 thinkplot.Show()
 ```
-
-![alt text](biased.png =400x350)
+<a href="url"><img src="biased.png" height="400"></a>
 
 ##### Step 5: Calculate the means of the two distributions.
 ```
