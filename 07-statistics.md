@@ -75,7 +75,7 @@ Elvis Presley had a twin brother who died at birth.  What is the probability tha
 
 This question asks us, what is the probability that Elvis is an identical twin given knowledge that he was a twin. This is a conditional probability and merits the use of Bayes Theorem. As a reminder, **this is Bayes Theorem:**
 
-![alt text](bayes.jpg =400x100)
+<a href="url"><img src="bayes.jpg" height="400"></a>
 
 **Step 1:** For our purposes, our variables are translated as as:
 
