@@ -1,0 +1,43 @@
+'''
+Exercise 2
+
+Go to Project Gutenberg (http://gutenberg.org) and download your favorite out-of-copyright book in plain text format.
+Modify your program from the previous exercise to read the book you downloaded, skip over the header information at the
+beginning of the file, and process the rest of the words as before.
+
+Then modify the program to count the total number of words in the book, and the number of times each word is used.
+
+Print the number of different words used in the book. Compare different books by different authors, written in different
+eras. Which author uses the most extensive vocabulary?
+
+'''
+
+file = "/Users/Zhanna/Documents/Coding_Projects/ds/metis/prework/dsp/z_Other_Learning_code/ThinkPython/GrimmsFairyTales.txt"
+
+fin = open(file)
+
+text = fin.readlines()
+print type(text)
+
+print len(text)
+
+words=[]
+import string
+punctuation = string.punctuation
+
+
+for line in text:
+    # Removes punctuation
+    line = line.translate(None, punctuation)
+    # Removes white spaces at ends
+    line = line.strip()
+    # Removes white spaces between lines
+    words = words + line.split()
+for i in range(len(words)):
+    words[i] = words[i].lower()
+
+print words
+
+# Resources:
+# Use of translate:
+# http://stackoverflow.com/questions/3939361/remove-specific-characters-from-a-string-in-python
