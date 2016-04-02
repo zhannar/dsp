@@ -50,7 +50,8 @@ pmf = thinkstats2.Pmf(rand_numbers)
 thinkplot.Pmf(pmf, linewidth=0.1)
 thinkplot.Show()
 ```
-![alt text](random_pdf.png =400x350)
+
+<a href="url"><img src="random_pdf.png" height="400"></a>
 
 ##### Step 4: Show the CDF.
 
@@ -60,5 +61,4 @@ thinkplot.Cdf(cdf)
 thinkplot.Show()
 ```
 
-![alt text](random_cdf.png =400x350)
-
+<a href="url"><img src="random_cdf.png" height="400"></a>
